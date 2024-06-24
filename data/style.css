@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Righteous";
+    src: url(Righteous-Regular.ttf);
+}
+
+p1 {
+    margin: 15px;
+    text-shadow: 3px 3px 10px rgb(0, 0, 0);
+    font-family: Righteous, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 1.4rem;
+    z-index: 2;
+    letter-spacing: 1px;
+    position: static;
+    margin-top: 4%;
+}
+
+h4 {
+    margin: 15px;
+    text-shadow: 3px 3px 10px rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 1.7rem;
+    z-index: 2;
+    position: absolute;
+    right: 4%;
+    top: 20%;
+}
+
+section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(140deg, rgb(25, 25, 66), rgb(32, 84, 67));
+    /* rgb(25, 25, 68) */
+}
+
+.blob {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    z-index: 0;
+}
+
+.blob:nth-child(2) {
+    filter: blur(50px);
+}
+
+.grille {
+    max-width: 1300px;
+    width: 80%;
+    height: auto;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 400px);
+    /* border: 3px solid rgb(255, 0, 0); */
+    justify-content: center;
+    grid-gap: 25px;
+}
+
+.gridBox {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    justify-content: center;
+    position: relative;
+    background: rgba(255, 255, 255, 0.075);
+    backdrop-filter: blur(17px);
+    height: 100px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(24, 24, 27, 0.821);
+    border: 1px solid rgba(113, 111, 206, 0.424);
+    z-index: 2;
+}
+
+.box {
+    justify-content: center;
+    display: grid;
+    position: relative;
+    color: azure;
+    transition: transform 0.4s cubic-bezier(0.23, 1.83, 0.42, 1.19);
+}
+
+.box p {
+    position: absolute;
+    justify-content: center;
+    top: 50%;
+    left: 23%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
+    letter-spacing: 0px;
+    font-family: Righteous, Helvetica, sans-serif;
+}
+
+.box p2 {
+    width: 200px;
+    position: absolute;
+    justify-content: center;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    letter-spacing: 0px;
+    font-family: Righteous, Helvetica, sans-serif;
+    z-index: 2;
+}
+
+.circle {
+    position: relative;
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    border: 1px solid #ffffffa6;
+    animation: 3s linear infinite alternate boxMagic, 4s linear infinite Spining;
+    padding-top: 113px;
+    left: -100%;
+}
+
+@keyframes boxMagic {
+    from {
+        box-shadow: 0 0 1px #74f9ee,
+            /* #feac5e */
+            0 0 1px #00a6ff,
+            /* #e600ff*/
+            0 0 1px #0051ff,
+            /* #00eeff */
+            0 0 1px #ffffff;
+        /* #00ff55 */
+    }
+
+    to {
+        box-shadow: 0 -4px 20px #74f9ee, 
+                    -4px 0 20px #00a6ff, 
+                    0 4px  20px  #0051ff, 
+                    4px 0  20px  #ffffff;
+    }
+}
+
+@keyframes Spining {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .gridBox {
+        transform: scale(0.8);
+    }
+
+    .box {
+        transform: scale(0.8);
+    }
+
+    .grille {
+
+        grid-gap: 5px;
+    }
+
+    .blob {
+        transform: scale(0.8);
+    }
+
+}
