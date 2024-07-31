@@ -4,8 +4,8 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
-const char *ssid = "Xiaomi_11T_Pro";
-const char *password = "josselin@2486";
+const char *ssid = "SsiD";
+const char *password = "passWord";
 
 #define TdsSensorPin 34 // GPIO TDS Sensor (doit le GND du module doit etre relier à l'ESP ainsi que 3.3V)
 #define VREF 3.3        // analog reference voltage(Volt) of the ADC
